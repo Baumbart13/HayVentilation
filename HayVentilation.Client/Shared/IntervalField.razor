@@ -1,0 +1,43 @@
+﻿@using HayVentilation.Core.Models;
+
+<h3>Interval</h3>
+
+<div class="timeplan_btns">
+    <div class="timeplan_btn">
+        <select id="plandiv_drawTypeSel" style="display:none;"></select>
+    </div>
+    <div class="timeplan_btn">
+        <button type="button" class="btn noBorder" id="plandiv_delete" disabled="">
+            <span class="delete">&nbsp;</span><span id="plandiv_delete_txt">Löschen</span>
+        </button>
+    </div>
+    <div class="timeplan_btn">
+        <button type="button" class="btn noBorder" id="plandiv_deleteAll">
+            <span class="deleteAll">&nbsp;</span><span id="plandiv_deleteAll_txt">Alle löschen</span>
+        </button>
+    </div>
+    <div class="timeplan_btn" style="float:right;">
+        <button type="button" class="btn" id="plandiv_advanced" style="display:none;">Weiterführend</button>
+    </div>
+</div>
+
+<div class="alert alert-secondary mt-4" day="0">
+    <span>@_interval1.Day.ToString()</span>
+    <div class="timeplan_daydraw">
+        
+    </div>
+</div>
+
+<div class="alert alert-secondary">
+    <span>Intervall 1: </span>
+    <textarea>@_interval1.Start</textarea> - <textarea>@_interval1.End</textarea>
+</div>
+
+@code {
+
+    [Parameter]
+    public Interval _interval1 { get; set; }
+    
+    [Parameter]
+    public Interval _interval2 { get; set; }
+}

@@ -1,0 +1,33 @@
+﻿@page "/Overview"
+@using HayVentilation.Client.Shared.OverviewPage
+@inject HttpClient Http
+<h3>Übersicht</h3>
+<br/><br/>
+<div class="d-grid gap-2 col-4 mx-0">
+    <ChangeModeButton Title="Dauerbetrieb" ThisMode="RunningMode.Continuous" CurrentMode="CurrentMode" OnClickFunction="ChangeMode"></ChangeModeButton>
+    <ChangeModeButton Title="Automatikbetrieb" ThisMode="RunningMode.Automatic" CurrentMode="CurrentMode" OnClickFunction="ChangeMode"></ChangeModeButton>
+    <ChangeModeButton Title="Intervallbetrieb" ThisMode="RunningMode.Interval" CurrentMode="CurrentMode" OnClickFunction="ChangeMode"></ChangeModeButton>
+    <ChangeModeButton Title="Lüfter Aus" ThisMode="RunningMode.Off" CurrentMode="CurrentMode" OnClickFunction="ChangeMode"></ChangeModeButton>
+</div>
+
+@code {
+
+    private RunningMode CurrentMode { get; set; } = RunningMode.Off;
+
+    private async Task GetApiData() {
+        CurrentMode = await Http.GetFromJsonAsync<RunningMode>("api/Mode/getCurrent");
+    }
+
+    private void ChangeMode(RunningMode newMode) {
+        CurrentMode = newMode;
+#pragma warning disable CS4014
+        //SaveApiData(newMode);
+#pragma warning restore CS4014
+    }
+
+    private async Task SaveApiData(RunningMode newMode) {
+        throw new NotImplementedException("No Controller implemented yet");
+        await Http.PutAsJsonAsync("/api/Mode/CurrentMode", newMode);
+    }
+
+}

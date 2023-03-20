@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <Company>Thomas Kefer</Company>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Iot.Device.Bindings" Version="2.2.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3" />
+      <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.1" />
+      <PackageReference Include="System.Device.Gpio" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\HayVentilation.Core\HayVentilation.Core.csproj" />
+    </ItemGroup>
+
+</Project>

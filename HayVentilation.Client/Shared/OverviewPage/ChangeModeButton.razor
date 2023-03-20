@@ -1,0 +1,21 @@
+﻿<div class="btn btn-secondary text-nowrap @Disabled" @onclick="() => OnClickFunction.InvokeAsync(ThisMode)">
+    <span class="oi oi-task me-2" aria-hidden="true"></span>
+    <strong>@Title</strong>
+</div>
+
+@code {
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public RunningMode CurrentMode { get; set; }
+
+    [Parameter]
+    public RunningMode ThisMode { get; set; }
+    
+    [Parameter]
+    public EventCallback<RunningMode> OnClickFunction { get; set; }
+
+    private string Disabled => CurrentMode == ThisMode ? "disabled" : "";
+}

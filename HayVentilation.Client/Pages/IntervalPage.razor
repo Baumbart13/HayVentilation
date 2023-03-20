@@ -1,0 +1,55 @@
+﻿@page "/Interval"
+@using HayVentilation.Core.Models
+@inject HttpClient Http
+<h3>Intervall</h3>
+
+@if (Error != null) {
+    <div class="alert alert-secondary mt-4">
+        <span class="oi oi-pencil me-2" aria-hidden="true"></span>
+        <strong>An Exception happened</strong><br/>
+        @Error
+    </div>
+}
+
+@if (Intervals.Count > 1) {
+    <IntervalField _interval1="Intervals[0]"></IntervalField>
+    <IntervalField _interval2="Intervals[1]"></IntervalField>
+}
+@if (Intervals.Count > 3) {
+    <IntervalField _interval1="Intervals[2]"></IntervalField>
+    <IntervalField _interval2="Intervals[3]"></IntervalField>
+}
+@if (Intervals.Count > 5) {
+    <IntervalField _interval1="Intervals[4]"></IntervalField>
+    <IntervalField _interval2="Intervals[5]"></IntervalField>
+}
+@if (Intervals.Count > 7) {
+    <IntervalField _interval1="Intervals[6]"></IntervalField>
+    <IntervalField _interval2="Intervals[7]"></IntervalField>
+}
+@if (Intervals.Count > 9) {
+    <IntervalField _interval1="Intervals[8]"></IntervalField>
+    <IntervalField _interval2="Intervals[9]"></IntervalField>
+}
+@if (Intervals.Count > 11) {
+    <IntervalField _interval1="Intervals[10]"></IntervalField>
+    <IntervalField _interval2="Intervals[11]"></IntervalField>
+}
+@if (Intervals.Count > 13) {
+    <IntervalField _interval1="Intervals[12]"></IntervalField>
+    <IntervalField _interval2="Intervals[13]"></IntervalField>
+}
+
+@code {
+    private List<Interval> Intervals { get; set; } = Array.Empty<Interval>().ToList();
+    private Exception Error { get; set; } = null;
+
+    protected override async Task OnInitializedAsync() {
+        try {
+            Intervals = (await Http.GetFromJsonAsync<List<Interval>>("api/Interval/TestAll"))!;
+        } catch (Exception e) {
+            Error = e;
+        }
+        await base.OnInitializedAsync();
+    }
+}

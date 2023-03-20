@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayVentilation.Recorder", "HayVentilation.Recorder\HayVentilation.Recorder.csproj", "{65750953-2E2C-4834-9233-46948807B38B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB00D391-3A3A-4CE1-BFD9-59DC3679CCA4} = {DB00D391-3A3A-4CE1-BFD9-59DC3679CCA4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayVentilation.Client", "HayVentilation.Client\HayVentilation.Client.csproj", "{2B2E2ED9-D508-4739-8AF0-D3A8AF64307E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayVentilation.Server", "HayVentilation.Server\HayVentilation.Server.csproj", "{8778D159-B45C-49C6-B42C-90CC53746835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayVentilation.Core", "HayVentilation.Core\HayVentilation.Core.csproj", "{C8CA3177-BE34-4B7F-89EA-FA382A3D64D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65750953-2E2C-4834-9233-46948807B38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65750953-2E2C-4834-9233-46948807B38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65750953-2E2C-4834-9233-46948807B38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65750953-2E2C-4834-9233-46948807B38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B2E2ED9-D508-4739-8AF0-D3A8AF64307E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2E2ED9-D508-4739-8AF0-D3A8AF64307E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2E2ED9-D508-4739-8AF0-D3A8AF64307E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2E2ED9-D508-4739-8AF0-D3A8AF64307E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8778D159-B45C-49C6-B42C-90CC53746835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8778D159-B45C-49C6-B42C-90CC53746835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8778D159-B45C-49C6-B42C-90CC53746835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8778D159-B45C-49C6-B42C-90CC53746835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CA3177-BE34-4B7F-89EA-FA382A3D64D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CA3177-BE34-4B7F-89EA-FA382A3D64D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CA3177-BE34-4B7F-89EA-FA382A3D64D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CA3177-BE34-4B7F-89EA-FA382A3D64D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
